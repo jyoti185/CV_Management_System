@@ -1,0 +1,19 @@
+{% extends 'common.html' %}
+{% block menu_place %}
+    {% include 'menu.html' %}
+{% endblock %}
+
+{% block content_place %}
+    {% load static %}
+    <table align="center" border="2">
+      <tr>
+
+
+          <th>
+              <img src="{% static 'images/resume.jpg' %}" width="1200" height="500">
+          </th>
+      </tr>
+    </table>
+    {% load static %}
+
+{% endblock %}
