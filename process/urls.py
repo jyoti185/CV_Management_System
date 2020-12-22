@@ -20,6 +20,10 @@ from process import views
 
 urlpatterns = [
     path('',views.showindex,name='main'),
+    path('Registration_page/',views.Registration_page,name='Registration_page'),
+    path('user_registration/',views.Registration_page,name='user_registration'),
+    path('otp_validate/',views.otp_validate,name='otp_validate'),
+
 
 
 
