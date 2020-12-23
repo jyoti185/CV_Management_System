@@ -1,0 +1,13 @@
+{% extends 'common.html' %}
+
+{% block menu_place %}
+    {% include 'menu.html' %}
+
+{% endblock %}
+
+{% block content_place %}
+   {% for x in messages %}
+       <h1 style="text-align: center">{{ x }}</h1>
+    {% endfor %}
+    <a href="{% url 'welcome_page' %}"> Login here</a>
+{% endblock %}

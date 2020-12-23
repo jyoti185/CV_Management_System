@@ -1,0 +1,13 @@
+{% extends 'common.html' %}
+{% block menu_place %}
+{% include 'menu.html' %}
+{% endblock %}
+
+{% block content_place %}
+    {% if request.session.contact %}
+        <h1>Welcome To Mr/Miss:{{ request.session.name }}</h1>
+    {% else %}
+        <h1>Please do Login First</h1>
+        <h4>With out Login You can not open this page</h4>
+    {% endif %}
+{% endblock %}

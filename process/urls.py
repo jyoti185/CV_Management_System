@@ -23,6 +23,13 @@ urlpatterns = [
     path('Registration_page/',views.Registration_page,name='Registration_page'),
     path('user_registration/',views.Registration_page,name='user_registration'),
     path('otp_validate/',views.otp_validate,name='otp_validate'),
+    path('validate/',views.validate,name='validate'),
+    path('confirmation/',views.confirmation,name='confirmation'),
+    path('welcome_page/',views.welcome_page,name='welcome_page'),
+    path('validate_login/',views.validate_login,name='validate_login'),
+    path('view_profile/',views.view_profile,name='view_profile'),
+    path('logout/',views.logout,name='logout'),
+
 
 
 

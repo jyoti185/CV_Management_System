@@ -4,7 +4,7 @@ def TextMessage(message,contactno):
 
     url = "https://www.fast2sms.com/dev/bulk"
 
-    querystring = {"authorization": "IQRhfs7vrXVmWCZP2LMnlN8yHAizbexoqSt3d4YBKaOkwJEpTcrb4GVwfNs6gBmWPA0uEovKdkY9yXLh",
+    querystring = {"authorization": "",
                    "sender_id": "FSTSMS",
                    "message": message,
                    "language": "english",
