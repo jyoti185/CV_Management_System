@@ -1,0 +1,49 @@
+{% extends 'common.html' %}
+{% block menu_place %}
+{% include 'menu.html' %}
+{%endblock %}
+
+{% block content_place %}
+    <style>
+    td{
+        padding: 5px;
+    }
+    </style>
+    <form action="{% url 'update_profile' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+
+    <table align="center" border="2">
+         <tr>
+             <th colspan="2">
+                 update profile
+             </th>
+         </tr>
+         <tr>
+             <th>Name</th>
+             <td>{{ request.session.name }}<input type="hidden" name="person" required="" id="id_person" value="{{ request.session.sno }}"></td>
+         </tr>
+        <tr>
+            <th>Education</th>
+            <td>{{ form.Education }}</td>
+        </tr>
+        <tr>
+            <th>Photo</th>
+            <td>{{ form.photo }}</td>
+        </tr>
+        <tr>
+            <th>Resume</th>
+            <td>{{ form.resume }}</td>
+        </tr>
+        <tr>
+            <th>Industry Type</th>
+            <td>{{ form.itype }}</td>
+        </tr>
+    <tr>
+        <th colspan="2">
+            <button type="submit">Save</button>
+        </th>
+    </tr>
+    </table>
+    </form>
+{% endblock %}

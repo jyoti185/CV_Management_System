@@ -3,14 +3,17 @@
 {% block menu_place %}
     <style>
     .menu{
-        background-color: orangered;
+
           border: black;
           border-radius: 10px;
           border-style: solid;
           margin: 10px;
     }
+    td{
+        text-align: left;
+    }
     </style>
-    {% include 'menu.html' %}
+    {% include 'home_menu.html' %}
 
 {% endblock %}
 
@@ -20,31 +23,34 @@
     {% else %}
     <form action="{% url 'user_registration' %}"method="post">
     {% csrf_token %}
+       <div class="container">
+       <div class="card m-4 ">
+        <div align="center " >
+            <h1 style="background:cadetblue">Registration Page</h1>
+            <table align="center" style="width: 50%;text-align: center">
+                <tr><th>{{ form.name.label }}</th>
+                    <td>{{ form.name }}</td>
+                </tr>
+                <tr><th>{{ form.contact_no.label }}</th>
+                    <td>{{ form.contact_no }}</td>
+                </tr>
+                <tr><th>{{ form.Email_id.label }}</th>
+                    <td>{{ form.Email_id }}</td>
+                </tr>
+                <tr><th>{{ form.password.label }}</th>
+                    <td>{{ form.password }}</td>
+                </tr>
+                <tr>
+                   <th colspan="2"><input type="hidden" name="otp" required="" id="id_otp" value="0"></th>
+                </tr>
 
 
-   <table align="center" border="0" width="800" >
-     <tr><th colspan="2" style="background-color: orangered;color: white;font-size: 10px">
-<h1 style="text-align: center"> Registration Page</h1></th></tr>
-       <tr><th>{{ form.name.label }}</th>
-           <th>{{ form.name }}</th>
-       </tr>
-       <tr><th>{{ form.contact_no.label }}</th>
-           <th>{{ form.contact_no }}</th>
-       </tr>
-       <tr><th>{{ form.Email_id.label }}</th>
-           <th>{{ form.Email_id }}</th>
-       </tr>
-       <tr><th>{{ form.password.label }}</th>
-           <th>{{ form.password }}</th>
-       </tr>
-       <tr>
-           <th><input type="hidden" name="otp" required="" id="id_otp" value="0"></th>
-       </tr>
+          <tr><th style="text-align: right"><button type="submit" class="btn btn-primary">save</button></th></tr>
 
-
-  <tr><th style="text-align: right"><button type="submit" class="btn btn-primary">save</button></th></tr>
-
-   </table>
+           </table>
+        </div>
+    </div>
+           </div>
     </form>
 {% endif %}
 {% endblock %}

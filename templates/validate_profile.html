@@ -1,0 +1,43 @@
+{% extends 'common.html' %}
+{% block menu_place %}
+{% include 'menu.html' %}
+{%endblock %}
+
+{% block content_place %}
+    <form action="{% url 'validate_profile' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+
+    <table align="center" border="0">
+     <tr>
+         <th colspan="2" style="background-color: orangered;color: white;font-size: 30px;width: 500px;text-align: center">
+             Validate profile
+         </th>
+     </tr>
+     <tr>
+         <td><input type="hidden" name="person" required="" id="id_person" value="{{ request.session.sno }}"></td>
+     </tr>
+     <tr>
+         <th><label for="id_Education">Education:</label>
+         </th>
+         <td><input type="text"
+                    name="Education"
+                    maxlength="100"
+                    required="" id="id_Education">
+         </td></tr>
+     <tr><th><label for="id_photo">Photo:</label></th><td><input type="file" name="photo" accept="image/*" required="" id="id_photo"></td></tr>
+     <tr><th><label for="id_resume">Resume:</label></th><td><input type="file" name="resume" required="" id="id_resume"></td></tr>
+     <tr><th><label for="id_itype">Itype:</label></th><td><select name="itype" required="" id="id_itype">
+      <option value="" selected="">---------</option>
+      {% for itype in industry %}
+      <option value="{{ itype.sno }}">{{ itype.type }}</option>
+      {% endfor %}
+
+    <tr >
+        <th style="text-align: right">
+            <button type="submit">Save</button>
+        </th>
+    </tr>
+    </table>
+    </form>
+{% endblock %}

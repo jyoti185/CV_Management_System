@@ -12,7 +12,7 @@
 
     <table align="center" border="2">
        <tr>
-           <th style="text-align: center;width: 800px;color: white;background-color: orangered">
+           <th style="text-align: center;width: 800px;color: white;background-color:cadetblue">
                <h1>Welcome To Login page</h1>
            </th>
        </tr>
@@ -23,7 +23,7 @@
       </tr>
        <tr>
            <th style="text-align: center">
-             Pssword:  <input type="password" placeholder="Password" name="u2" required>
+             Password:  <input type="password" placeholder="Password" name="u2" required>
            </th>
        </tr>
        <tr>
@@ -35,10 +35,10 @@
   </form>
 
     {% if error %}
-        <div  style="text-align: center;background-color: red;color: white;font-size: 20px" class="alert alert-warning alert-dismissible fade show" role="alert">
-  <strong>worning!</strong> {{ error }}
-  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
+        <div  style="text-align: center;background-color:brown;color: white;font-size: 20px" class="alert alert-warning alert-dismissible fade show" role="alert">
+         <strong>worning!</strong> {{ error }}
+         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
     {% endif %}
     {% endif %}
 {% endblock %}

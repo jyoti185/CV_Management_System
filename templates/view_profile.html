@@ -5,7 +5,34 @@
 
 {% block content_place %}
     {% if request.session.contact %}
-        <h1>Welcome To Mr/Miss:{{ request.session.name }}</h1>
+        <table align="center" border="2">
+          <tr>
+              <th style="background-color: orangered;color: white;font-size: 20px;width: 500px">Welcome To Mr/Miss:{{ request.session.name }}</th>
+
+          </tr>
+
+        </table>
+        {% if result %}
+            <div class="container" style="padding: 50px">
+            <div class="card p-4">
+            <img src="{{ result.photo.url }}" width="200">
+            <div class="card-body">
+                <p>Name : {{ result.person.name }}</p>
+                <hr>
+                <p>Education : {{ result.Education }}</p>
+                <p>Industry : {{ result.itype }}</p>
+                <p>Contact : {{ result.person.contact_no }}</p>
+                <p>Resume : <a href="{{ result.resume.url }}" target="_blank" download>{{ request.session.name }}_resume.pdf</a></p>
+            </div>
+            </div>
+            </div>
+        {% else %}
+        <h1>
+            <a href="{% url 'validate_profile' %}"> update profile </a></h1>
+        {% for x in messages %}
+            <h4>{{ x }}</h4>
+        {% endfor %}
+        {% endif %}
     {% else %}
         <h1>Please do Login First</h1>
         <h4>With out Login You can not open this page</h4>

@@ -1,28 +1,24 @@
 {% extends 'common.html' %}
 {% block menu_place %}
-    <style>
-      .menu{
-          background-color: orangered;
-          border: black;
-          border-radius: 10px;
-          border-style: solid;
-          margin: 10px;
-      }
-    </style>
-    {% include 'menu.html' %}
+
+    {% include 'home_menu.html' %}
 {% endblock %}
 
 {% block content_place %}
     {% load static %}
-    <table align="center" border="2">
-      <tr>
+    <div class="m-4">
+    <img src="{% static 'images/resume.jpg' %}" width="1200">
+    </div>
 
-
-          <th>
-              <img src="{% static 'images/resume.jpg' %}" width="1200" height="500">
-          </th>
-      </tr>
-    </table>
+{#    <table align="center" border="2">#}
+{#      <tr>#}
+{##}
+{##}
+{#          <th>#}
+{#              <img src="{% static 'images/resume.jpg' %}" width="1200" height="500">#}
+{#          </th>#}
+{#      </tr>#}
+{#    </table>#}
     {% load static %}
 
 {% endblock %}

@@ -3,6 +3,11 @@ from django.db import models
 class IndustryMOdel(models.Model):
     sno=models.AutoField(primary_key=True)
     type=models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.type
+
+
 class RegistrationModel(models.Model):
     sno=models.AutoField(primary_key=True)
     name=models.CharField(max_length=100)
@@ -13,6 +18,9 @@ class RegistrationModel(models.Model):
     status=models.CharField(max_length=20,default='Pending')
 
     Date_of_join=models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
 
 class ProfileMOdel(models.Model):
     sno = models.AutoField(primary_key=True)
